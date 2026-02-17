@@ -7,14 +7,14 @@ export default async function BookmarkList() {
   async function getBookmarks(): Promise<Bookmark[]> {
     // TODO: Remove this after testing with real data.
     const session = await auth();
+    const email = session?.user?.email;
     const { data: bookmarks, error } = await supabase
       .from("bookmark")
       .select("title, url")
-      .eq("email", session?.user?.email);
+      .eq("email", email);
     if (error != null) {
       console.error(error);
     }
-
     return bookmarks || [];
   }
   const bookmarks: Bookmark[] = await getBookmarks();
