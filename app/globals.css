@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Next.js–inspired theme (used in Header; reuse for nav, cards, buttons) */
+  --header-bg: #000000;
+  --header-border: #262626;       /* neutral-800 */
+  --header-title: #ffffff;
+  --header-muted: #a3a3a3;       /* neutral-400 */
+  --btn-outline-border: #525252; /* neutral-600 */
+  --btn-outline-text: #d4d4d4;   /* neutral-300 */
+  --btn-outline-hover-border: #737373;   /* neutral-500 */
+  --btn-outline-hover-bg: rgba(38, 38, 38, 0.8); /* neutral-800/80 */
+  --btn-outline-hover-text: #ffffff;
 }
 
 @theme inline {
