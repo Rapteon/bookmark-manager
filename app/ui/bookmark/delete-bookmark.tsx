@@ -8,8 +8,7 @@ export default function DeleteBookmark({ bookmark }: { bookmark: Bookmark }) {
       .from("bookmark")
       .delete()
       .eq("email", bookmark.email)
-      .eq("title", bookmark.title)
-      .eq("url", bookmark.url)
+      .eq("id", bookmark.id)
       .select("");
     if (error) {
       console.error(error);

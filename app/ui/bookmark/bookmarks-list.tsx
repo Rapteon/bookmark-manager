@@ -36,7 +36,7 @@ export default function BookmarkList({
             if (payload.eventType === "UPDATE") {
               if (newPayload.email === userEmail) {
                 return prev.map((bk) =>
-                  bk.title === oldPayload.title && bk.url === oldPayload.url
+                  bk.id === oldPayload.id && bk.email === oldPayload.email
                     ? { ...bk, title: newPayload.title, url: newPayload.url }
                     : bk,
                 );
@@ -48,7 +48,7 @@ export default function BookmarkList({
                 return prev.filter(
                   (bk) =>
                     !(
-                      bk.title === oldPayload.title && bk.url === oldPayload.url
+                      bk.id === oldPayload.id && bk.email === oldPayload.email
                     ),
                 );
               }
@@ -68,7 +68,7 @@ export default function BookmarkList({
   return (
     <div className="h-full">
       {items.length > 0 ? (
-        items.map((item) => <BookmarkCard key={item.url} bookmark={item} />)
+        items.map((item) => <BookmarkCard key={item.id+item.email} bookmark={item} />)
       ) : (
         <div className="flex items-center justify-center h-full">
           <p className="text-gray-500 text-lg">
