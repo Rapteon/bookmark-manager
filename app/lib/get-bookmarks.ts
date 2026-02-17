@@ -1,4 +1,3 @@
-import { useSession } from "next-auth/react";
 import { Bookmark } from "./models/Bookmark";
 import { supabase } from "./supabase";
 import { auth } from "../auth";

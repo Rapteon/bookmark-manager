@@ -1,6 +1,6 @@
 "use client";
+import { Bookmark } from "@/app/lib/models/Bookmark";
 import { supabase } from "@/app/lib/supabase";
-import { Bookmark } from "@/app/models/Bookmark";
 
 export default function DeleteBookmark({ bookmark }: { bookmark: Bookmark }) {
   async function deleteBookmark(bookmark: Bookmark) {
