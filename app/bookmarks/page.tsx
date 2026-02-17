@@ -8,9 +8,9 @@ export default function Bookmarks() {
     <div className="flex flex-col">
       <AddBookmark />
       <div className="max-h-[calc(100vh-14rem)] overflow-y-auto">
-      <Suspense fallback={<ListSkeleton />}>
+        <Suspense fallback={<ListSkeleton />}>
         <BookmarkList />
-      </Suspense>
+        </Suspense>
       </div>
     </div>
   );
