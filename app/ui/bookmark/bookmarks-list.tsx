@@ -66,11 +66,15 @@ export default function BookmarkList({
   }, [userEmail]);
 
   return (
-    <div>
+    <div className="h-full">
       {items.length > 0 ? (
         items.map((item) => <BookmarkCard key={item.url} bookmark={item} />)
       ) : (
-        <div>Add some bookmarks to get started</div>
+        <div className="flex items-center justify-center h-full">
+          <p className="text-gray-500 text-lg">
+            Add some bookmarks to get started
+          </p>
+        </div>
       )}
     </div>
   );

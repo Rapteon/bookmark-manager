@@ -13,15 +13,10 @@ export default function AddBookmark() {
     const email = session?.user?.email;
 
     // At this point you have the extracted values.
-    const bookmark = { email: email, title: title, url: url }
-    const { error } = await supabase
-      .from("bookmark")
-      .insert(bookmark);
+    const bookmark = { email: email, title: title, url: url };
+    const { error } = await supabase.from("bookmark").insert(bookmark);
     if (error) {
       alert(`Could not add new bookmark due to error: ${error.message}`);
-    }
-    else {
-        alert(`Added bookmark: ${bookmark.title}:${bookmark.url}`)
     }
   }
 
