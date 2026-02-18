@@ -9,7 +9,9 @@ export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
           <h1 className="text-lg font-semibold tracking-tight text-black">
             {bookmark.title}
           </h1>
-          <p className="text-sm text-neutral-400">{bookmark.url}</p>
+          <a className="text-sm text-neutral-400 hover:underline" target="_blank" href={bookmark.url}>
+            {bookmark.url}
+          </a>
         </div>
         <DeleteBookmark bookmark={bookmark}></DeleteBookmark>
       </div>
